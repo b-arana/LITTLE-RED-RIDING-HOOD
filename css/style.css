@@ -1,4 +1,59 @@
-.title{
-    background-color: green;
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Great+Vibes');
 
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 16px; 
+}
+#container{
+    background-image: url("/images/background2.jpg")
+
+
+}
+#container-inside{
+    padding-top: 60px;
+    width: 60%;
+    margin: 0 auto;
+    height: 900px;  
+}
+#section-front{
+    position: relative;
+    border: 2px solid green;
+    box-shadow: rgb(150,150,150) 5px 5px 10px inset;
+    border-radius: 15px 50px 30px;
+    margin: 30px 20% 50px;
+    overflow: hidden;
+    height: 400px;
+}
+.img-title{
+    margin: 0 20%;
+}
+.img-background {
+    position: absolute;
+    z-index: -100;
+    width: 600px;
+    height: 450px;
+
+}
+.btn-start {
+    font-family: 'Berkshire Swash',
+    'cursive';
+    font-size: 2em;
+    width: 270px;
+    height: 70px;
+    border-radius: 25px;
+    color: white;
+    margin: 0 20%;
+    background-color:rgb(178,150,45);
+    cursor: pointer;
+}
+.btn-start:hover{
+    background-color:rgba(175, 165, 127, 0.5);
+
+}
+canvas {
+    display: none;
+    border: 1px solid grey;
 }
