@@ -1,75 +1,75 @@
 @import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Great+Vibes');
 
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 body {
-    font-size: 16px; 
+	font-size: 16px;
 }
 /* #container{
     background-image: url("/images/background2.jpg")
 } */
-#container-inside{
-    padding-top: 60px;
-    width: 60%;
-    margin: 0 auto;
-    height: 900px;  
+#container-inside {
+	padding-top: 60px;
+	width: 60%;
+	margin: 0 auto;
+	height: 900px;
 }
-#section-front{
-    position: relative;
-    border: 2px solid green;
-    box-shadow: rgb(150,150,150) 5px 5px 10px inset;
-    border-radius: 15px 50px 30px;
-    margin: 30px 20% 50px;
-    overflow: hidden;
-    height: 400px;
+#section-front {
+	position: relative;
+	border: 2px solid green;
+	box-shadow: rgb(150, 150, 150) 5px 5px 10px inset;
+	border-radius: 15px 50px 30px;
+	margin: 30px 20% 50px;
+	overflow: hidden;
+	height: 400px;
 }
-.img-title{
-    margin: 0 20%;
+.img-title {
+	margin: 0 20%;
 }
 .img-background {
-    position: absolute;
-    z-index: -100;
-    width: 600px;
-    height: 450px;
+	position: absolute;
+	z-index: -100;
+	width: 600px;
+	height: 450px;
 }
 .btn-start {
-    font-family: 'Berkshire Swash',
-    'cursive';
-    border: 2px solid rgb(178, 150, 45);
-    font-size: 2em;
-    width: 225px;
-    height: 60px;
-    border-radius: 25px;
-    color: rgb(178, 150, 45);
-    margin: 0 20%;
-    background-color: white;
-    cursor: pointer;
+	font-family: 'Berkshire Swash', 'cursive';
+	border: 2px solid rgb(178, 150, 45);
+	font-size: 2em;
+	width: 225px;
+	height: 60px;
+	border-radius: 25px;
+	color: rgb(178, 150, 45);
+	margin: 0 20%;
+	background-color: white;
+	cursor: pointer;
 }
-.btn-start:hover{
-    background-color: rgb(178, 150, 45);
-    border:2px solid white;
-    color:white;
-    animation: 1s click 1;
-    animation-delay: 1s;
+.btn-start:hover {
+	background-color: rgb(178, 150, 45);
+	border: 2px solid white;
+	color: white;
+	animation: 1s click 1;
+	animation-delay: 0.3s;
 }
 @keyframes click {
-    25%{
-        transform: scale(0.8);
-    }
-    50%{
-        transform: scale(1.1);
-    }
-    75%{
-        transform: scale(0.9);
-    }
-    100%{
-        transform: scale(1)
-    }
+	25% {
+		transform: scale(0.8);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	75% {
+		transform: scale(0.9);
+	}
+	100% {
+		transform: scale(1);
+	}
 }
 #canvas {
-    display:none;
-    background-color: rgb(141,225,92);
-    border: 3px solid green;
+	display: none;
+	background-color: rgb(141, 225, 92);
+	border: 3px solid green;
+	
 }
