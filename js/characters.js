@@ -8,11 +8,12 @@ function Characters(canvas, ctx) {
 	this.ctx = ctx;
 	this.x = 625;
 	this.y = 800;
-	this.r = 30;
+    this.r = 30;
 }
 Characters.prototype.drawRedHiringHood = function() {
 	this.ctx.beginPath();
-	this.ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+    this.ctx.fillStyle = "red";
+    this.ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
 	this.ctx.fill();
 	this.ctx.closePath();
 };
