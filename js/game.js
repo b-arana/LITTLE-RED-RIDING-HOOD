@@ -21,6 +21,7 @@ Game.prototype.start = function() {
 			this.house.drawHouse();
 			this.house.moveHouse();
 			this.redRidingHood.drawRedHiringHood();
+			this.redRidingHood.setListeners();
             this.redRidingHood.moveRedHiringHood();
 			this.obstaclesController()
 			this.addObstacles();

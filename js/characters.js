@@ -6,8 +6,8 @@ var LEFT_KEY = 37;
 function Characters(canvas, ctx) {
 	this.canvas = canvas;
 	this.ctx = ctx;
-	this.v = 1;
-	this.maxSpeed = 10;
+	this.v = 2;
+	this.maxSpeed = 6;
 	this.x = 625;
 	this.y = 800;
 	this.r = 30;
@@ -33,26 +33,45 @@ Characters.prototype.moveUp = function () {
 Characters.prototype.moveDown = function () {
 	this.y += this.v * this.maxSpeed;
 }
-Characters.prototype.moveRedHiringHood = function() {
-	document.onkeydown = function(event) {
-	
-		switch (event.keyCode) {
-		 	case RIGHT_KEY:
-		 		this.moveRight();
-		 		console.log("Right")
-		 		break;
-		 	case LEFT_KEY:
-		 		this.moveLeft();
-		 		console.log("Left")
-		 		break;
-		 	case BOTTOM_KEY:
-		 		this.moveDown();
-		 		console.log("Bottom")
-		 		break;
-			case TOP_KEY:
-	 			this.moveUp();
-		 		console.log("Up")
-		 		break;
-		 }
+Characters.prototype.setListeners = function(){
+	document.onkeydown = function (event) {
+		if (event.keyCode === 39) {
+			this.moveRight = true;
+		} else if (event.keyCode === 38) {
+			this.moveUp = true;
+		} else if (event.keyCode === 37) {
+			this.moveLeft = true;
+		} else if (event.keyCode === 40) {
+			this.moveDown = true;
+		}
 	}.bind(this);
+
+	document.onkeyup = function (event) {
+			if (event.keyCode === 39) {
+				this.moveRight = false;
+			} else if (event.keyCode === 38) {
+				this.moveUp = false;
+			} else if (event.keyCode === 37) {
+				this.moveLeft = false;
+			} else if (event.keyCode === 40) {
+				this.moveDown = false;
+			}
+	}.bind(this);
+}
+
+Characters.prototype.moveRedHiringHood = function () {
+	if (this.moveLeft === true) {
+		this.x -= this.v * this.maxSpeed;	
+	} if(this.moveRight === true){
+		this.x += this.v * this.maxSpeed;
+	} if(this.moveUp === true){
+		this.y -= this.v * this.maxSpeed;
+	} if(this.moveDown === true){
+		this.y += this.v * this.maxSpeed;
+	}
+	console.log(this.moveLeft + "Left");
+	console.log(this.moveUp + "Up");
 };
+
+
+
