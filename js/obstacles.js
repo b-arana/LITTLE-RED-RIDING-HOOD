@@ -1,19 +1,18 @@
 function Obstacles(canvas, ctx) {
     this.canvas = canvas;
     this.ctx = ctx;
-    this.posMinX = 10;
-    this.posMaxX = this.canvas.width;
+    this.w = 30;
+    this.h = 60;
+    this.posMinX = this.w +5; 
+    this.posMaxX = this.canvas.width-this.w;
     this.posMaxY = -150;
     this.posMinY = 0;
-    this.vMax = 20;
+    this.vMax = 15;
     this.vMin = 10;
     this.x = this.numRandom(this.posMinX, this.posMaxX);
     this.y = this.numRandom(this.posMaxY, this.posMinY);
-    this.w = 30;
-    this.h = 60;
     this.vy = this.numRandom(this.vMax, this.vMin);
-    this.live = true;
-       
+    this.live = true;    
 }
 
 Obstacles.prototype.drawObstacles = function () {

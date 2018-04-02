@@ -6,6 +6,8 @@ var LEFT_KEY = 37;
 function Characters(canvas, ctx) {
 	this.canvas = canvas;
 	this.ctx = ctx;
+	this.v = 1;
+	this.maxSpeed = 10;
 	this.x = 625;
 	this.y = 800;
 	this.r = 30;
@@ -19,22 +21,38 @@ Characters.prototype.drawRedHiringHood = function() {
 	this.ctx.fill();
 	this.ctx.closePath();
 };
+Characters.prototype.moveRight = function () {
+	this.x += this.v * this.maxSpeed;
+}
+Characters.prototype.moveLeft = function () {
+	this.x -= this.v * this.maxSpeed;
+}
+Characters.prototype.moveUp = function () {
+	this.y -= this.v * this.maxSpeed;
+}
+Characters.prototype.moveDown = function () {
+	this.y += this.v * this.maxSpeed;
+}
 Characters.prototype.moveRedHiringHood = function() {
 	document.onkeydown = function(event) {
-		var d = 15; // Declare variable distance
+	
 		switch (event.keyCode) {
-			case RIGHT_KEY:
-				this.x += d;
-				break;
-			case LEFT_KEY:
-				this.x -= d;
-				break;
-			case BOTTOM_KEY:
-				this.y += d;
-				break;
+		 	case RIGHT_KEY:
+		 		this.moveRight();
+		 		console.log("Right")
+		 		break;
+		 	case LEFT_KEY:
+		 		this.moveLeft();
+		 		console.log("Left")
+		 		break;
+		 	case BOTTOM_KEY:
+		 		this.moveDown();
+		 		console.log("Bottom")
+		 		break;
 			case TOP_KEY:
-				this.y -= d;
-				break;
-		}
+	 			this.moveUp();
+		 		console.log("Up")
+		 		break;
+		 }
 	}.bind(this);
 };

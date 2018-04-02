@@ -8,8 +8,7 @@ function Game(canvasId) {
 	//this.wolf = new Characters(this.canvas, this.ctx);
 	this.obstacles = new Obstacles(this.canvas, this.ctx);
 	this.arrayObs = [];
-	
-	
+
 }
 Game.prototype.clear = function() {
 	this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
