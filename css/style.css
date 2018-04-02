@@ -31,7 +31,7 @@ body {
 
 .back{
     display: none;
-    background-image: url("/images/wolf.jpg");
+    background-image: url("../images/wolf.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 

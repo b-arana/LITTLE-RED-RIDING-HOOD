@@ -5,8 +5,9 @@ function Game(canvasId) {
     this.height = 900;
 	this.house = new House(this.canvas, this.ctx);
 	this.redRidingHood = new Characters(this.canvas, this.ctx);
-	this.wolf = new Characters(this.canvas, this.ctx);
+	//this.wolf = new Characters(this.canvas, this.ctx);
 	this.obstacles = new Obstacles(this.canvas, this.ctx);
+	this.arrayObs = [];
 	
 	
 }
@@ -22,16 +23,29 @@ Game.prototype.start = function() {
 			this.house.moveHouse();
 			this.redRidingHood.drawRedHiringHood();
             this.redRidingHood.moveRedHiringHood();
-            this.obstacles.drawObstacles();
-            this.obstacles.moveObstacles ();
+			this.obstaclesController()
+			this.addObstacles();
 		}.bind(this),
 		60
 	);
 };
 
+Game.prototype.obstaclesController = function () {
+	this.arrayObs.forEach( (e,i) => {
+		if(e.live == false){
+			this.arrayObs.splice(i, 1);
+		}
+		e.drawObstacles();
+		e.moveObstacles();
+		if (e.y > this.height) {
+			e.live = false;
+		}
+		e.collision(this.redRidingHood)
+	})
+}
+
 Game.prototype.addObstacles = function(){
-	
-
-
-
+	if(this.arrayObs.length <= 5){
+		this.arrayObs.push(new Obstacles(this.canvas, this.ctx));
+	}
 }

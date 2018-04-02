@@ -5,13 +5,11 @@ function House(canvas, ctx) {
 	this.y = 20;
 	this.w = 100;
 	this.vx = 7;
+	this.img = new Image();
+	this.img.src = 'images/house.jpg';
 }
 House.prototype.drawHouse = function() {
-    this.ctx.fillStyle = "white";
-	this.ctx.fillRect(this.x, this.y, this.w, this.w);
-	// this.img = new Image();
-	// this.img.src = '/images/house.jpg';
-	// this.ctx.drawImage(this.img, this.x, this.y, this.w, this.w);
+	this.ctx.drawImage(this.img, this.x, this.y, this.w, this.w);
 };
 
 House.prototype.moveHouse = function() {

@@ -8,7 +8,9 @@ function Characters(canvas, ctx) {
 	this.ctx = ctx;
 	this.x = 625;
 	this.y = 800;
-    this.r = 30;
+	this.r = 30;
+	this.h = 30;
+	this.w = 30;
 }
 Characters.prototype.drawRedHiringHood = function() {
 	this.ctx.beginPath();
