@@ -1,12 +1,15 @@
 function Obstacles(canvas, ctx) {
     this.canvas = canvas;
     this.ctx = ctx;
-    // this.x = Math.floor(Math.random() * ((this.canvas.width - this.w) - (this.x + this.w)) + (this.x + this.w));
-    this.x = 30;
+    this.posMinX = 10;
+    this.posMaxX = this.canvas.width;
+    this.x = this.numRandom(this.posMinX, this.posMaxX);
     this.y = 40;
     this.w = 30;
     this.h = 60;
     this.vy = 7;
+    
+   
 }
 
 Obstacles.prototype.drawObstacles = function () {
@@ -16,5 +19,9 @@ Obstacles.prototype.drawObstacles = function () {
 Obstacles.prototype.moveObstacles = function(){
     this.y += this.vy;
 
+}
+
+Obstacles.prototype.numRandom = function (min, max) {
+    return num = Math.round(Math.random() * (max - min) + min);
 
 }

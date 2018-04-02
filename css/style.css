@@ -25,6 +25,17 @@ body {
 	overflow: hidden;
 	height: 400px;
 }
+.front{
+    display: initial;
+}
+
+.back{
+    display: none;
+    background-image: url("/images/wolf.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
 .img-title {
 	margin: 0 20%;
 }

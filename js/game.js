@@ -28,3 +28,10 @@ Game.prototype.start = function() {
 		60
 	);
 };
+
+Game.prototype.addObstacles = function(){
+	
+
+
+
+}
