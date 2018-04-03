@@ -10,29 +10,32 @@ function Characters(canvas, ctx) {
 	this.maxSpeed = 6;
 	this.x = 625;
 	this.y = 800;
-	this.r = 30;
-	this.h = 30;
-	this.w = 30;
+	// this.r = 30;
+	this.h = 50;
+	this.w = 50;
+	this.img = new Image();
+	this.img.src = 'images/redRidingHood.jpg';
 }
 Characters.prototype.drawRedHiringHood = function() {
-	this.ctx.beginPath();
-    this.ctx.fillStyle = "red";
-    this.ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
-	this.ctx.fill();
-	this.ctx.closePath();
+	this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
+	// this.ctx.beginPath();
+    // this.ctx.fillStyle = "red";
+    // this.ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+	// this.ctx.fill();
+	// this.ctx.closePath();
 };
-Characters.prototype.moveRight = function () {
-	this.x += this.v * this.maxSpeed;
-}
-Characters.prototype.moveLeft = function () {
-	this.x -= this.v * this.maxSpeed;
-}
-Characters.prototype.moveUp = function () {
-	this.y -= this.v * this.maxSpeed;
-}
-Characters.prototype.moveDown = function () {
-	this.y += this.v * this.maxSpeed;
-}
+	Characters.prototype.moveRight = function () {
+		this.x += this.v * this.maxSpeed;
+	}
+	Characters.prototype.moveLeft = function () {
+		this.x -= this.v * this.maxSpeed;
+	}
+	Characters.prototype.moveUp = function () {
+		this.y -= this.v * this.maxSpeed;
+	}
+	Characters.prototype.moveDown = function () {
+		this.y += this.v * this.maxSpeed;
+	}
 Characters.prototype.setListeners = function(){
 	document.onkeydown = function (event) {
 		if (event.keyCode === 39) {
@@ -69,8 +72,7 @@ Characters.prototype.moveRedHiringHood = function () {
 	} if(this.moveDown === true){
 		this.y += this.v * this.maxSpeed;
 	}
-	console.log(this.moveLeft + "Left");
-	console.log(this.moveUp + "Up");
+
 };
 
 

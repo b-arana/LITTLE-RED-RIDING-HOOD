@@ -29,8 +29,9 @@ Obstacles.prototype.numRandom = function (min, max) {
 
 Obstacles.prototype.collision = function (obstacle) {
     if (this.x < obstacle.x + obstacle.w && this.x + this.w > obstacle.x &&
-        this.y < obstacle.y + obstacle.h && this.y + this.h > obstacle.y) {
-        console.log("CHOCASTE")
-    }
+        this.y < obstacle.y + obstacle.h && this.y + this.h > obstacle.y) { 
+        return true;  
+    }  
+
 }
 
