@@ -6,7 +6,7 @@ function Chronometer(canvas, ctx) {
 	this.w = 65;
 	this.h = 45;
 	this.interval;
-	this.sec = 0;
+	this.sec = 30;
 }
 
 Chronometer.prototype.drawTimer = function() {
@@ -18,8 +18,8 @@ Chronometer.prototype.drawTimer = function() {
 Chronometer.prototype.runingTime = function() {
 	this.interval = setInterval(
 		function() {
-			this.sec++;
-			if (this.sec > 30) {
+			this.sec--;
+			if (this.sec <= 0) {
 				clearInterval(this.interval);
 				alert('Finish Time!!!!');
 				return;
@@ -27,4 +27,5 @@ Chronometer.prototype.runingTime = function() {
 		}.bind(this),
 		1000
 	);
+	
 };

@@ -71,14 +71,7 @@ Characters.prototype.moveRedHiringHood = function () {
 
 };
 
-Characters.prototype.eatRedHiringHood = function (){
 
-
-
-
-
-
-}
 
 
 
