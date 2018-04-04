@@ -12,11 +12,12 @@ function Strawberries(canvas, ctx) {
 	this.x = this.numRandom(this.posMinX, this.posMaxX);
 	this.y = this.numRandom(this.posMaxY, this.posMinY);
 	this.vy = this.numRandom(this.vMax, this.vMin);
-	this.live = true;
+    this.live = true;
+    this.img = new Image();
+    this.img.src = 'images/fresasmodif.png' 
 }
 Strawberries.prototype.drawStrawberries = function() {
-	this.ctx.fillStyle = 'red';
-	this.ctx.fillRect(this.x, this.y, this.w, this.h);
+    this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
 };
 Strawberries.prototype.moveStrawberries = function() {
 	this.y += this.vy;

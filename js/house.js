@@ -4,9 +4,9 @@ function House(canvas, ctx) {
 	this.x = 575;
 	this.y = 20;
 	this.w = 100;
-	this.vx = 7;
+	this.vx = 14;
 	this.img = new Image();
-	this.img.src = 'images/house.jpg';
+	this.img.src = 'images/house_modif.png';
 	
 }
 House.prototype.drawHouse = function() {

@@ -3,9 +3,9 @@ function Game(canvasId) {
 	this.ctx = this.canvas.getContext('2d');
 	this.width = 700;
 	this.height = 900;
+	this.background = new Background(this.canvas, this.ctx);
 	this.house = new House(this.canvas, this.ctx);
 	this.redRidingHood = new Characters(this.canvas, this.ctx);
-	this.background = new Background(this.canvas, this.ctx);
 	this.obstacles = new Obstacles(this.canvas, this.ctx);
 	this.strawberries = new Strawberries(this.canvas, this.ctx);
 	this.chronometer = new Chronometer(this.canvas, this.ctx);
@@ -82,7 +82,7 @@ Game.prototype.strawberriesController = function() {
 };
 
 Game.prototype.addObstacles = function() {
-	if (this.arrayObs.length <= 5) {
+	if (this.arrayObs.length <= 4) {
 		this.arrayObs.push(new Obstacles(this.canvas, this.ctx));
 	}
 };
@@ -94,10 +94,7 @@ Game.prototype.addStrawberries = function() {
 
 Game.prototype.stop = function() {
 	if (this.gameOver == true) {
-		
-	
-		console.log('Game Over');
-		// return prompt (" Game Over. Do you like to play again? ");
+		clearInterval(this.interval);
 	}
 };
 

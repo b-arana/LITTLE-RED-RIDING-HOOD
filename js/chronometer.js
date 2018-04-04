@@ -21,8 +21,7 @@ Chronometer.prototype.runingTime = function() {
 			this.sec--;
 			if (this.sec <= 0) {
 				clearInterval(this.interval);
-				alert('Finish Time!!!!');
-				return;
+				
 			}
 		}.bind(this),
 		1000

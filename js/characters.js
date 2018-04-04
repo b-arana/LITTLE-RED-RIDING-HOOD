@@ -9,12 +9,11 @@ function Characters(canvas, ctx) {
 	this.v = 2;
 	this.maxSpeed = 6;
 	this.x = 625;
-	this.y = 800;
-	// this.r = 30;
-	this.h = 50;
-	this.w = 50;
+	this.y = 770;
+	this.h = 80;
+	this.w = 80;
 	this.img = new Image();
-	this.img.src = 'images/redRidingHood.jpg';
+	this.img.src = 'images/redRidingHoodmodificada.png';
 }
 Characters.prototype.drawRedHiringHood = function() {
 	this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
@@ -70,7 +69,18 @@ Characters.prototype.moveRedHiringHood = function () {
 	}
 
 };
+Characters.prototype.moveCheckLimits = function () {
+	if (this.moveLeft === true) {
+		this.x -= this.v * this.maxSpeed;
+	} if (this.moveRight === true) {
+		this.x += this.v * this.maxSpeed;
+	} if (this.moveUp === true) {
+		this.y -= this.v * this.maxSpeed;
+	} if (this.moveDown === true) {
+		this.y += this.v * this.maxSpeed;
+	}
 
+};
 
 
 

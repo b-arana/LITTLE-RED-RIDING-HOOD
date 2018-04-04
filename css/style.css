@@ -7,9 +7,7 @@
 body {
 	font-size: 16px;
 }
-/* #container{
-    background-image: url("/images/background2.jpg")
-} */
+
 #container-inside {
 	padding-top: 60px;
 	width: 60%;
@@ -32,11 +30,7 @@ body {
 
 .back{
     display: none;
-    background-image: url("../images/wolf.jpg");
-    background-repeat: no-repeat;
-	background-size: cover;
-	line-height: 1.5;
-	font-size: 1.5em;
+	font-size: 1.8em;
 
 }
 .img-title {
@@ -83,8 +77,8 @@ body {
 }
 #canvas {
 	display: none;
-	background-color: rgb(141, 225, 92);
-	border: 3px solid green;
+	border: 6px solid green;
+	margin: 0 auto;
 	
 }
 .time{
@@ -102,6 +96,7 @@ h2{
 }
 p{
 	padding-left: 10px;
+	
 }
 span{
 	color: green;

@@ -1,20 +1,20 @@
 function Obstacles(canvas, ctx) {
     this.canvas = canvas;
     this.ctx = ctx;
-    this.w = 55;
-    this.h = 75;
+    this.w = 70;
+    this.h = 80;
     this.posMinX = this.w + 5; 
     this.posMaxX = this.canvas.width-this.w;
     this.posMaxY = -150;
-    this.posMinY = 0;
+    this.posMinY = -20;
     this.vMax = 30;
-    this.vMin = 10;
+    this.vMin = 15;
     this.x = this.numRandom(this.posMinX, this.posMaxX);
     this.y = this.numRandom(this.posMaxY, this.posMinY);
     this.vy = this.numRandom(this.vMax, this.vMin);
     this.live = true;   
     this.img = new Image();
-    this.img.src = 'images/obstacles.jpg' 
+    this.img.src = 'images/wolf_modif.png' 
 }
 
 Obstacles.prototype.drawObstacles = function () {

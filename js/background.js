@@ -9,7 +9,6 @@ function Background(canvas, ctx) {
     this.img.src = 'images/background-2.jpg';
 }
 Background.prototype.drawBackground = function () {
-    // this.ctx.drawImage(this.img, -150, -70, this.w, this.h);
     this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
     
 };

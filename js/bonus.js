@@ -16,6 +16,6 @@ Bonus.prototype.drawBonus = function () {
 };
 Bonus.prototype.getBonus = function () {
     this.game.chronometer.sec += 3;
-    console.log("resta tiempo!!!");
+    
    
 }
