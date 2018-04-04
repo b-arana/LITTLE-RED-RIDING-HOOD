@@ -24,6 +24,7 @@ body {
 	margin: 30px 20% 50px;
 	overflow: hidden;
 	height: 400px;
+	width: 600px;
 }
 .front{
     display: initial;
@@ -33,7 +34,9 @@ body {
     display: none;
     background-image: url("../images/wolf.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+	background-size: cover;
+	line-height: 1.5;
+	font-size: 1.5em;
 
 }
 .img-title {
@@ -83,4 +86,24 @@ body {
 	background-color: rgb(141, 225, 92);
 	border: 3px solid green;
 	
+}
+.time{
+	font-size: 2.5em;
+	width: 120px;
+	height: 95px;
+	background-color: gray;
+	color:white;
+	border-radius: 15px;
+	border:2px solid black;	
+}
+h2{
+	padding:15px 0 15px ;
+	text-align: center;
+}
+p{
+	padding-left: 10px;
+}
+span{
+	color: green;
+	font-weight: bolder;
 }

@@ -1,26 +1,23 @@
 window.onload = function() {
-	$(document).ready (function(){
-		$('#section-front').on('mouseover',function(){
+	$(document).ready(function() {
+		$('#section-front').on('mouseover', function() {
 			$('.back').css({
-				display:'initial'
+				display: 'initial'
 			});
 			$('.front').css({
 				display: 'none'
 			});
-		})
-		$('#section-front').on('mouseleave', function () {
+		});
+		$('#section-front').on('mouseleave', function() {
 			$('.back').css({
 				display: 'none'
 			});
 			$('.front').css({
 				display: 'initial'
 			});
-		})
+		});
+	});
 
-	})
-	
-	
-	
 	document.getElementById('start-button').onclick = function() {
 		var game = new Game('canvas');
 
@@ -29,9 +26,11 @@ window.onload = function() {
 		});
 		$('#container').css({
 			display: 'none'
-		});
+		})
+	
 		game.start();
-
 		
 	};
+
+
 };

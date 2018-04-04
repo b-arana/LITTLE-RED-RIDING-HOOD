@@ -16,12 +16,12 @@ House.prototype.drawHouse = function() {
 House.prototype.moveHouse = function() {
 	this.x += this.vx;
 	if (this.x >= this.canvas.width - this.w || this.x < 0) {
-		this.vx *= -1; // retroceder
+		this.vx *= -1; 
 	}
 };
 
 House.prototype.isCollision = function (redRidingHood ) {
-	debugger;
+	
 	if (this.x < redRidingHood.x + redRidingHood.w && this.x + this.w > redRidingHood.x &&
 		this.y < redRidingHood.y + redRidingHood.h && this.y + this.w > redRidingHood.y) {
 		return true;

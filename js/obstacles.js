@@ -1,23 +1,24 @@
 function Obstacles(canvas, ctx) {
     this.canvas = canvas;
     this.ctx = ctx;
-    this.w = 30;
-    this.h = 60;
-    this.posMinX = this.w +5; 
+    this.w = 55;
+    this.h = 75;
+    this.posMinX = this.w + 5; 
     this.posMaxX = this.canvas.width-this.w;
     this.posMaxY = -150;
     this.posMinY = 0;
-    this.vMax = 15;
+    this.vMax = 25;
     this.vMin = 10;
     this.x = this.numRandom(this.posMinX, this.posMaxX);
     this.y = this.numRandom(this.posMaxY, this.posMinY);
     this.vy = this.numRandom(this.vMax, this.vMin);
-    this.live = true;    
+    this.live = true;   
+    this.img = new Image();
+    this.img.src = 'images/obstacles.jpg' 
 }
 
 Obstacles.prototype.drawObstacles = function () {
-    this.ctx.fillStyle = "green";
-    this.ctx.fillRect(this.x, this.y, this.w, this.h);
+    this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
 }
 Obstacles.prototype.moveObstacles = function(){
     this.y += this.vy;

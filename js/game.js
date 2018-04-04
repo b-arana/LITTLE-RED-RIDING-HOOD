@@ -7,7 +7,9 @@ function Game(canvasId) {
 	this.redRidingHood = new Characters(this.canvas, this.ctx);
 	this.background = new Background(this.canvas, this.ctx);
 	this.obstacles = new Obstacles(this.canvas, this.ctx);
+	// this.chronometer = new Chronometer(this.canvas, this.ctx);
 	this.arrayObs = [];
+	this.arrayStrawberries = [];
 	this.gameOver = false;
 	this.interval;
 }
@@ -53,11 +55,21 @@ Game.prototype.obstaclesController = function() {
 		clearInterval(this.interval);
 	}
 };
+
+
+
+
+
 Game.prototype.addObstacles = function() {
 	if (this.arrayObs.length <= 5) {
 		this.arrayObs.push(new Obstacles(this.canvas, this.ctx));
 	}
 };
+Game.prototype.addStrawberries = function (){
+
+
+
+}
 
 Game.prototype.stop = function() {
 	if (this.gameOver == true) {

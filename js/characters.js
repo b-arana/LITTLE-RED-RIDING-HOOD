@@ -18,11 +18,7 @@ function Characters(canvas, ctx) {
 }
 Characters.prototype.drawRedHiringHood = function() {
 	this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
-	// this.ctx.beginPath();
-    // this.ctx.fillStyle = "red";
-    // this.ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
-	// this.ctx.fill();
-	// this.ctx.closePath();
+	
 };
 	Characters.prototype.moveRight = function () {
 		this.x += this.v * this.maxSpeed;
