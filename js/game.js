@@ -8,6 +8,8 @@ function Game(canvasId) {
 	this.background = new Background(this.canvas, this.ctx);
 	this.obstacles = new Obstacles(this.canvas, this.ctx);
 	this.strawberries = new Strawberries(this.canvas, this.ctx);
+	this.chronometer = new Chronometer(this.canvas, this.ctx);
+	this.bonus = new Bonus(this.canvas, this.ctx);
 	this.arrayObs = [];
 	this.arrayStrawberries = [];
 	this.gameOver = false;
@@ -22,6 +24,7 @@ Game.prototype.start = function() {
 		function() {
 			this.clear();
 			this.background.drawBackground();
+			this.chronometer.drawTimer();
 			this.house.drawHouse();
 			this.house.moveHouse();
 			this.redRidingHood.drawRedHiringHood();
@@ -31,10 +34,13 @@ Game.prototype.start = function() {
 			this.addObstacles();
 			this.strawberriesController();
 			this.addStrawberries();
+
 			this.stop();
 		}.bind(this),
 		60
 	);
+	this.chronometer.runingTime();
+	this.bonus.drawBonus();
 };
 Game.prototype.obstaclesController = function() {
 	this.arrayObs.forEach((e, i) => {
@@ -57,7 +63,7 @@ Game.prototype.obstaclesController = function() {
 		clearInterval(this.interval);
 	}
 };
-Game.prototype.strawberriesController = function () {
+Game.prototype.strawberriesController = function() {
 	this.arrayStrawberries.forEach((e, i) => {
 		if (e.live == false) {
 			this.arrayStrawberries.splice(i, 1);
@@ -68,31 +74,31 @@ Game.prototype.strawberriesController = function () {
 			e.live = false;
 		}
 		if (e.check(this.redRidingHood)) {
-			console.log("Fresa!!!")
+			this.bonus.drawBonus();
+			this.bonus.getBonus();
+			debugger;
+			console.log('Fresa!!!');
 		}
 	});
-
-	
 };
-
 
 Game.prototype.addObstacles = function() {
 	if (this.arrayObs.length <= 5) {
 		this.arrayObs.push(new Obstacles(this.canvas, this.ctx));
 	}
 };
-Game.prototype.addStrawberries = function (){
-	
+Game.prototype.addStrawberries = function() {
 	if (this.arrayStrawberries.length < 1) {
 		this.arrayStrawberries.push(new Strawberries(this.canvas, this.ctx));
 	}
-
-
-}
+};
 
 Game.prototype.stop = function() {
 	if (this.gameOver == true) {
+		
+	
 		console.log('Game Over');
 		// return prompt (" Game Over. Do you like to play again? ");
 	}
 };
+
