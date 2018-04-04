@@ -7,7 +7,7 @@ function Obstacles(canvas, ctx) {
     this.posMaxX = this.canvas.width-this.w;
     this.posMaxY = -150;
     this.posMinY = 0;
-    this.vMax = 25;
+    this.vMax = 30;
     this.vMin = 10;
     this.x = this.numRandom(this.posMinX, this.posMaxX);
     this.y = this.numRandom(this.posMaxY, this.posMinY);

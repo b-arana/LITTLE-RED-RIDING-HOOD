@@ -7,7 +7,7 @@ function Game(canvasId) {
 	this.redRidingHood = new Characters(this.canvas, this.ctx);
 	this.background = new Background(this.canvas, this.ctx);
 	this.obstacles = new Obstacles(this.canvas, this.ctx);
-	// this.chronometer = new Chronometer(this.canvas, this.ctx);
+	this.strawberries = new Strawberries(this.canvas, this.ctx);
 	this.arrayObs = [];
 	this.arrayStrawberries = [];
 	this.gameOver = false;
@@ -29,6 +29,8 @@ Game.prototype.start = function() {
 			this.redRidingHood.moveRedHiringHood();
 			this.obstaclesController();
 			this.addObstacles();
+			this.strawberriesController();
+			this.addStrawberries();
 			this.stop();
 		}.bind(this),
 		60
@@ -55,9 +57,23 @@ Game.prototype.obstaclesController = function() {
 		clearInterval(this.interval);
 	}
 };
+Game.prototype.strawberriesController = function () {
+	this.arrayStrawberries.forEach((e, i) => {
+		if (e.live == false) {
+			this.arrayStrawberries.splice(i, 1);
+		}
+		e.drawStrawberries();
+		e.moveStrawberries();
+		if (e.y > this.height) {
+			e.live = false;
+		}
+		if (e.check(this.redRidingHood)) {
+			console.log("Fresa!!!")
+		}
+	});
 
-
-
+	
+};
 
 
 Game.prototype.addObstacles = function() {
@@ -66,7 +82,10 @@ Game.prototype.addObstacles = function() {
 	}
 };
 Game.prototype.addStrawberries = function (){
-
+	
+	if (this.arrayStrawberries.length < 1) {
+		this.arrayStrawberries.push(new Strawberries(this.canvas, this.ctx));
+	}
 
 
 }
