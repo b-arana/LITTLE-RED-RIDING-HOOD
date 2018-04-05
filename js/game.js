@@ -110,7 +110,4 @@ Game.prototype.stop = function() {
 		clearInterval(this.interval);
 	}
 };
-// Game.prototype.restart = function(){
-// 	document.getElementById('gameOver').style.display = "none";
 
-// }
