@@ -29,8 +29,8 @@ Obstacles.prototype.numRandom = function (min, max) {
 }
 
 Obstacles.prototype.collision = function (obstacle) {
-    if (this.x < obstacle.x + obstacle.w && this.x + this.w > obstacle.x &&
-        this.y < obstacle.y + obstacle.h && this.y + this.h > obstacle.y) { 
+    if (this.x-10< obstacle.x-10 + obstacle.w-10 && this.x-10 + this.w-10 > obstacle.x-10 &&
+        this.y-10 < obstacle.y-10 + obstacle.h-10 && this.y-10 + this.h-10 > obstacle.y-10) { 
         return true;  
     }  
 

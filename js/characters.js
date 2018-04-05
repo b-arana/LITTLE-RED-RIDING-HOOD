@@ -17,22 +17,21 @@ function Characters(canvas, ctx) {
 }
 Characters.prototype.drawRedHiringHood = function() {
 	this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
-	
 };
-	Characters.prototype.moveRight = function () {
-		this.x += this.v * this.maxSpeed;
-	}
-	Characters.prototype.moveLeft = function () {
-		this.x -= this.v * this.maxSpeed;
-	}
-	Characters.prototype.moveUp = function () {
-		this.y -= this.v * this.maxSpeed;
-	}
-	Characters.prototype.moveDown = function () {
-		this.y += this.v * this.maxSpeed;
-	}
-Characters.prototype.setListeners = function(){
-	document.onkeydown = function (event) {
+Characters.prototype.moveRight = function() {
+	this.x += this.v * this.maxSpeed;
+};
+Characters.prototype.moveLeft = function() {
+	this.x -= this.v * this.maxSpeed;
+};
+Characters.prototype.moveUp = function() {
+	this.y -= this.v * this.maxSpeed;
+};
+Characters.prototype.moveDown = function() {
+	this.y += this.v * this.maxSpeed;
+};
+Characters.prototype.setListeners = function() {
+	document.onkeydown = function(event) {
 		if (event.keyCode === 39) {
 			this.moveRight = true;
 		} else if (event.keyCode === 38) {
@@ -44,45 +43,30 @@ Characters.prototype.setListeners = function(){
 		}
 	}.bind(this);
 
-	document.onkeyup = function (event) {
-			if (event.keyCode === 39) {
-				this.moveRight = false;
-			} else if (event.keyCode === 38) {
-				this.moveUp = false;
-			} else if (event.keyCode === 37) {
-				this.moveLeft = false;
-			} else if (event.keyCode === 40) {
-				this.moveDown = false;
-			}
+	document.onkeyup = function(event) {
+		if (event.keyCode === 39) {
+			this.moveRight = false;
+		} else if (event.keyCode === 38) {
+			this.moveUp = false;
+		} else if (event.keyCode === 37) {
+			this.moveLeft = false;
+		} else if (event.keyCode === 40) {
+			this.moveDown = false;
+		}
 	}.bind(this);
-}
-
-Characters.prototype.moveRedHiringHood = function () {
-	if (this.moveLeft === true) {
-		this.x -= this.v * this.maxSpeed;	
-	} if(this.moveRight === true){
-		this.x += this.v * this.maxSpeed;
-	} if(this.moveUp === true){
-		this.y -= this.v * this.maxSpeed;
-	} if(this.moveDown === true){
-		this.y += this.v * this.maxSpeed;
-	}
-
 };
-Characters.prototype.moveCheckLimits = function () {
+
+Characters.prototype.moveRedHiringHood = function() {
 	if (this.moveLeft === true) {
 		this.x -= this.v * this.maxSpeed;
-	} if (this.moveRight === true) {
+	}
+	if (this.moveRight === true) {
 		this.x += this.v * this.maxSpeed;
-	} if (this.moveUp === true) {
+	}
+	if (this.moveUp === true) {
 		this.y -= this.v * this.maxSpeed;
-	} if (this.moveDown === true) {
+	}
+	if (this.moveDown === true) {
 		this.y += this.v * this.maxSpeed;
 	}
-
 };
-
-
-
-
-

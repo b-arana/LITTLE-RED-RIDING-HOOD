@@ -11,7 +11,7 @@ function Chronometer(canvas, ctx) {
 
 Chronometer.prototype.drawTimer = function() {
 	this.ctx.font = '120px Roboto';
-	this.ctx.fillStyle = 'white';
+	this.ctx.fillStyle = 'black';
 	this.ctx.fillText(this.sec, this.x, this.y);
 };
 
@@ -21,10 +21,8 @@ Chronometer.prototype.runingTime = function() {
 			this.sec--;
 			if (this.sec <= 0) {
 				clearInterval(this.interval);
-				
 			}
 		}.bind(this),
 		1000
 	);
-	
 };

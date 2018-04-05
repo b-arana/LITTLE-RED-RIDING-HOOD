@@ -27,10 +27,11 @@ window.onload = function() {
 		$('#container').css({
 			display: 'none'
 		})
-	
 		game.start();
 		
 	};
+
+	
 
 
 };

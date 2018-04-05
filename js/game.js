@@ -1,8 +1,8 @@
 function Game(canvasId) {
 	this.canvas = document.getElementById(canvasId);
 	this.ctx = this.canvas.getContext('2d');
-	this.width = 700;
-	this.height = 900;
+	this.width = 1250;
+	this.height = 850;
 	this.background = new Background(this.canvas, this.ctx);
 	this.house = new House(this.canvas, this.ctx);
 	this.redRidingHood = new Characters(this.canvas, this.ctx);
@@ -34,7 +34,6 @@ Game.prototype.start = function() {
 			this.addObstacles();
 			this.strawberriesController();
 			this.addStrawberries();
-
 			this.stop();
 		}.bind(this),
 		60
@@ -54,13 +53,27 @@ Game.prototype.obstaclesController = function() {
 		}
 		if (e.collision(this.redRidingHood)) {
 			this.gameOver = true;
+			this.ctx.font = '120px Chicle';
+			this.ctx.fillStyle = 'white';
+			this.ctx.fillText('GAME OVER !!', this.canvas.width / 2 - 250, this.canvas.height / 2);
+
 			clearInterval(this.interval);
 		}
 	});
 
 	if (this.house.isCollision(this.redRidingHood)) {
-		this.gameOver = true;
-		clearInterval(this.interval);
+		if ((this.gameOver = true)) {
+			this.background.drawBackground();
+			this.chronometer.drawTimer();
+			this.house.drawHouse();
+			this.addObstacles();
+			this.addStrawberries();
+			this.ctx.font = '120px Chicle';
+			this.ctx.fillStyle = 'white';
+			this.ctx.fillText('YOU WIN!!', this.canvas.width / 2 - 230, this.canvas.height / 2);
+
+			clearInterval(this.interval);
+		}
 	}
 };
 Game.prototype.strawberriesController = function() {
@@ -82,7 +95,7 @@ Game.prototype.strawberriesController = function() {
 };
 
 Game.prototype.addObstacles = function() {
-	if (this.arrayObs.length <= 4) {
+	if (this.arrayObs.length <= 5) {
 		this.arrayObs.push(new Obstacles(this.canvas, this.ctx));
 	}
 };
@@ -97,4 +110,7 @@ Game.prototype.stop = function() {
 		clearInterval(this.interval);
 	}
 };
+// Game.prototype.restart = function(){
+// 	document.getElementById('gameOver').style.display = "none";
 
+// }
