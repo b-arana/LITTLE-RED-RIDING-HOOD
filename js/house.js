@@ -4,7 +4,7 @@ function House(canvas, ctx) {
 	this.x = 575;
 	this.y = 10;
 	this.w = 100;
-	this.vx = 20;
+	this.vx = 25;
 	this.img = new Image();
 	this.img.src = 'images/house_modif.png';
 }

@@ -12,7 +12,7 @@ function Game(canvasId) {
 	this.bonus = new Bonus(this.canvas, this.ctx, this);
 	this.arrayObs = [];
 	this.arrayStrawberries = [];
-	this.arrayStones = [ 
+	this.arrayShrubbery = [ 
 		new Shrubbery(this.canvas, this.ctx, this, 300, 20, 200, 200, 40),
 		new Shrubbery(this.canvas, this.ctx, this, 600, 300, 450, 200, 40),
 		new Shrubbery(this.canvas, this.ctx, this, 900, 600, 700, 200, 40),
@@ -40,6 +40,7 @@ Game.prototype.start = function() {
 			this.addObstacles();
 			this.strawberriesController();
 			this.addStrawberries();
+			this.shrubberyController();
 			this.stop();
 		}.bind(this),
 		60
@@ -48,7 +49,7 @@ Game.prototype.start = function() {
 	this.bonus.drawBonus();
 };
 Game.prototype.paintShrubbery = function () {
-	this.arrayStones.forEach( function (e) {
+	this.arrayShrubbery.forEach( function (e) {
 		e.drawShrubbery();
 	})
 }
@@ -105,6 +106,20 @@ Game.prototype.strawberriesController = function() {
 	});
 };
 
+Game.prototype.shrubberyController = function () {
+	 this.arrayShrubbery.forEach(function(e,i){
+		 if (e.checkShrubbery()) {
+			 this.arrayShrubbery.splice(i, 1);
+			 this.bonus.lostBonus();
+			 this.ctx.font = '120px Chicle';
+			 this.ctx.fillStyle = 'white';
+			 this.ctx.fillText('YOU LOST TIME !!', this.canvas.width / 2 - 230, this.canvas.height / 2);
+
+
+		 }
+	 }.bind(this))	
+}
+ 
 Game.prototype.addObstacles = function() {
 	if (this.arrayObs.length <= 5) {
 		this.arrayObs.push(new Obstacles(this.canvas, this.ctx));

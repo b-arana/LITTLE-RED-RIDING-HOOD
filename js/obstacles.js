@@ -3,12 +3,12 @@ function Obstacles(canvas, ctx) {
     this.ctx = ctx;
     this.w = 70;
     this.h = 80;
-    this.posMinX = this.w + 5; 
+    this.posMinX = this.w; 
     this.posMaxX = this.canvas.width-this.w;
     this.posMaxY = -150;
     this.posMinY = -20;
-    this.vMax = 30;
-    this.vMin = 15;
+    this.vMax = 25;
+    this.vMin = 12;
     this.x = this.numRandom(this.posMinX, this.posMaxX);
     this.y = this.numRandom(this.posMaxY, this.posMinY);
     this.vy = this.numRandom(this.vMax, this.vMin);

@@ -16,6 +16,8 @@ Bonus.prototype.drawBonus = function () {
 };
 Bonus.prototype.getBonus = function () {
     this.game.chronometer.sec += 5;
-    
-   
+     
+}
+Bonus.prototype.lostBonus = function () {
+    this.game.chronometer.sec -= 3;
 }
