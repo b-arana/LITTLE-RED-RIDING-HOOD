@@ -8,7 +8,7 @@ function Game(canvasId) {
 	this.redRidingHood = new Characters(this.canvas, this.ctx);
 	this.obstacles = new Obstacles(this.canvas, this.ctx);
 	this.strawberries = new Strawberries(this.canvas, this.ctx);
-	this.chronometer = new Chronometer(this.canvas, this.ctx);
+	this.chronometer = new Chronometer(this.canvas, this.ctx, this);
 	this.bonus = new Bonus(this.canvas, this.ctx, this);
 	this.arrayObs = [];
 	this.arrayStrawberries = [];

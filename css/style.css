@@ -107,5 +107,12 @@ span {
 #canvas {
 	display: none;
 	border: 6px solid green;
-	
+	margin: 0 auto;	
 }
+ /* .canvas-container{
+	
+	align-items: center;
+	height: 100vh;
+	max-width: 100%;
+	box-sizing: border-box;
+}   */
