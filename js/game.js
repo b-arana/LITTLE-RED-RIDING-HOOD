@@ -12,6 +12,11 @@ function Game(canvasId) {
 	this.bonus = new Bonus(this.canvas, this.ctx, this);
 	this.arrayObs = [];
 	this.arrayStrawberries = [];
+	this.arrayStones = [ 
+		new Shrubbery(this.canvas, this.ctx, this, 300, 20, 200, 200, 40),
+		new Shrubbery(this.canvas, this.ctx, this, 600, 300, 450, 200, 40),
+		new Shrubbery(this.canvas, this.ctx, this, 900, 600, 700, 200, 40),
+	]
 	this.gameOver = false;
 	this.interval;
 }
@@ -30,6 +35,7 @@ Game.prototype.start = function() {
 			this.redRidingHood.drawRedHiringHood();
 			this.redRidingHood.setListeners();
 			this.redRidingHood.moveRedHiringHood();
+			this.paintShrubbery ();
 			this.obstaclesController();
 			this.addObstacles();
 			this.strawberriesController();
@@ -41,6 +47,11 @@ Game.prototype.start = function() {
 	this.chronometer.runingTime();
 	this.bonus.drawBonus();
 };
+Game.prototype.paintShrubbery = function () {
+	this.arrayStones.forEach( function (e) {
+		e.drawShrubbery();
+	})
+}
 Game.prototype.obstaclesController = function() {
 	this.arrayObs.forEach((e, i) => {
 		if (e.live == false) {

@@ -9,56 +9,56 @@ body {
 }
 #container {
 	height: 100vh;
-	background-image:url('../images/background-1.jpg');
+	background-image: url('../images/background-1.jpg');
 	background-repeat: no-repeat;
-	background-size: cover;	
+	background-size: cover;
 }
 
 #container-inside {
 	padding-top: 20px;
 	width: 40%;
-	height:100vh;
+	height: 100vh;
 	float: left;
 	margin-left: 30%;
 }
-.img-title{
-	  width: 600px;
-	  height: 180px;
-	  border: 5px rgb(206, 30, 39)solid;
-	  box-shadow: rgb(206, 30, 39) 10px 10px 15px;
-	  border-radius: 50%;
-	  background: white;
-	  text-align: center;
-	  margin-left: 7%;
+.img-title {
+	width: 600px;
+	height: 180px;
+	border: 5px rgb(206, 30, 39)solid;
+	box-shadow: rgb(206, 30, 39) 10px 10px 15px;
+	border-radius: 50%;
+	background: white;
+	text-align: center;
+	margin-left: 7%;
 }
 
 #section-front {
 	border: 2px solid rgb(165, 179, 44);
 	background-color: palegoldenrod;
-	box-shadow:rgb(219, 208, 84) 15px 15px 35px inset;
+	box-shadow: rgb(219, 208, 84) 15px 15px 35px inset;
 	border-radius: 15px 50px 30px;
 	height: 500px;
 	width: 700px;
-	overflow: hidden;	
+	overflow: hidden;
 	font-family: "Chicle";
 	margin: 50px 0;
 	cursor: pointer;
 }
-.front{
-	display: initial;	
+.front {
+	display: initial;
 }
 .img-background {
 	height: 500px;
 	width: 700px;
 }
-.back{
-    display: none;
+.back {
+	display: none;
 	font-size: 1.8em;
 }
 h2 {
 	padding: 15px 0 15px;
 	text-align: center;
-	color:green;
+	color: green;
 	font-size: 3.5em;
 }
 
@@ -108,6 +108,4 @@ span {
 	display: none;
 	border: 6px solid green;
 	margin: 0 auto;
-	
 }
-
