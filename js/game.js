@@ -121,7 +121,7 @@ Game.prototype.shrubberyController = function () {
 }
  
 Game.prototype.addObstacles = function() {
-	if (this.arrayObs.length <= 5) {
+	if (this.arrayObs.length <= 4) {
 		this.arrayObs.push(new Obstacles(this.canvas, this.ctx));
 	}
 };
