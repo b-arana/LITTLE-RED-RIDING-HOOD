@@ -6,6 +6,7 @@
 }
 body {
 	font-size: 16px;
+	text-align: center;
 }
 #container {
 	height: 100vh;
@@ -81,7 +82,7 @@ span {
 	color: rgb(178, 150, 45);
 	background-color: white;
 	cursor: pointer;
-	margin-left: 190px;
+	margin-left: 120px;
 }
 .btn-start:hover {
 	background-color: rgb(178, 150, 45);
